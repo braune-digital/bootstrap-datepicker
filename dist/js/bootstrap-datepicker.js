@@ -3,7 +3,7 @@
  *
  * Licensed under the Apache License v2.0 (http://www.apache.org/licenses/LICENSE-2.0)
  */
-
+console.log(window);
 (function(factory){
     if (typeof define === 'function' && define.amd) {
         define(['jquery'], factory);
@@ -13,6 +13,7 @@
         factory(jQuery);
     }
 }(function($, undefined){
+
 	function UTCDate(){
 		return new Date(Date.UTC.apply(Date, arguments));
 	}
@@ -524,7 +525,7 @@
 			if (!utc) {
 				return utc;
 			}
-
+    console.log(utc);
 			var local = new Date(utc.getTime() + (utc.getTimezoneOffset() * 60000));
 
 			if (local.getTimezoneOffset() !== utc.getTimezoneOffset()) {
